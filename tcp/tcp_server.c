@@ -142,6 +142,7 @@ void getStringBeforeDot(char* string)
         	num ++;
     	}
 
+    	bzero(file_no_dot, 100);
     	strncpy(file_no_dot, string, num);
     	printf("newString = %s\n", file_no_dot);
 	return;
@@ -160,6 +161,7 @@ void tcp_compile_process()
 
 	//step 1. transmit file name
     	bzero(buffer, BUF_SIZE);
+    	bzero(filePath, BUF_SIZE);
 	recvBytes = recv(sockfd, buffer, BUF_SIZE, 0);
 	strcpy(filePath, buffer);
 	printf("received %d bytes, compile project name=%s\n", recvBytes, filePath);

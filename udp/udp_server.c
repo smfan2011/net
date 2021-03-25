@@ -118,6 +118,7 @@ void getStringBeforeDot(char* string)
         	num ++;
     	}
 
+        bzero(file_no_dot, 100);
     	strncpy(file_no_dot, string, num);
     	printf("newString = %s\n", file_no_dot);
 	return;
